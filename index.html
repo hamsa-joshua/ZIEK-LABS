@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zeik Labs</title>
+
+  <!-- Google Font (edit if you want a different font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./assets/logo.png">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ====== HEADER / NAV ====== -->
+  <header class="site-header">
+    <div class="logo">
+      <!-- Click the logo after loading page to replace it locally -->
+      <img id="logoImg" src="assets/logo.png" alt="logo (replace in assets or click to change)">
+    </div>
+
+    <!-- Desktop nav -->
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#team" class="nav-link">Team</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <div class="nav-right">
+      <!-- Dark mode toggle -->
+      <!-- Mobile hamburger -->
+      <i class="fas fa-bars mobile-menu-btn" id="mobileBtn" aria-hidden="true"></i>
+    </div>
+  </header>
+
+  <!-- Mobile nav (hidden on desktop) -->
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#team" class="nav-link">Team</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+  </nav>
+
+  <!-- ====== HERO (animated) ====== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="hero-shapes">
+        <span class="shape s1"></span>
+        <span class="shape s2"></span>
+        <span class="shape s3"></span>
+        <span class="shape s4"></span>
+      </div>
+    </div>
+
+    <div class="container hero-inner">
+      <!-- Edit hero heading & lead inline -->
+      <h1 >ZIEK LABS</h1>
+      <p class="lead" > SYSTEMS | AUTOMATION | GROWTH </p>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT (scrollable big cards) ====== -->
+  <section id="about">
+
+  <div class="about-wrapper">
+
+    <!-- LEFT SIDE IMAGES -->
+    <div class="about-images">
+      <img src="assets/abt4.gif" alt="About Image A" class="about-img top1-img">
+      <div class="img-stack">
+        <img src="assets/abt2.jpeg" alt="About Image B" class="about-img med1-img">
+        <img src="assets/abt3.jpeg" alt="About Image C" class="about-img med2-img">
+      </div>
+       <img src="assets/abt1.jpeg" alt="About Image A" class="about-img top2-img">
+    </div>
+
+    <!-- RIGHT TEXT CONTENT -->
+    <div class="about-content">
+      <span class="tag">A BIT</span>
+      <h2>About Us</h2>
+
+      <p>Zeik Labs is a Business Solutions Partner.We companies streamline operations, automate workflows, manage financial systems, and scale effortlessly.We specialize in SaaS implementation (Click Up, Tracking Time), process optimization, IT solutions, and financial consulting for growing businesses.</p>
+
+      <a href="#services" class="about-btn">Explore More</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+  <!-- ====== SERVICES (alternating rows, text boxes) ====== -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2 >Services</h2>
+        <p >Operations, tools, and automation services to scale your team.</p>
+      </div>
+
+      <!-- Service row 1: Image left, text right -->
+      <div class="services-row">
+        <img src="assets/BPS1.jpeg" alt="Service 1 image">
+        <div class="services-text-box">
+          <h3 >Business & Process Solutions</h3>
+          <p >We streamline and structure operations.</p>
+          <ul>
+            <li >Workflow automation</li>
+            <li >Business process optimization</li>
+            <li >SOP creation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Service row 2: Image right, text left (CSS alternates rows automatically) -->
+      <div class="services-row">
+        <img src="assets/BPS2.png" alt="Service 2 image">
+        <div class="services-text-box">
+          <h3 >SaaS Setup and Management</h3>
+          <p >We set up and optimize your work tools.</p>
+          <ul>
+            <li>Asana workspace setup</li>
+            <li>ClickUp workspace setup</li>
+            <li>TrackingTime setup</li>
+            <li>Team onboarding & training</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Service row 3 -->
+      <div class="services-row">
+        <img src="assets/BPS3.jpeg" alt="Service 3 image">
+        <div class="services-text-box">
+          <h3 >IT Services</h3>
+          <p>We connect and automate yours systems.</p>
+          <ul>
+            <li >Tool integrations</li>
+            <li >Automation setup</li>
+            <li >Dashboard & reporting tools</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Service row 4: Image right, text left (CSS alternates rows automatically) -->
+      <div class="services-row">
+        <img src="assets/BPS4.jpeg" alt="Service 4 image">
+        <div class="services-text-box">
+          <h3 >Financial Services</h3>
+          <p>We organize finances for clarity and growth.</p>
+          <ul>
+            <li >Basic accounting setup</li>
+            <li >Payroll structuring</li>
+            <li >Monthly reporting</li>
+            <li >Business planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS ====== -->
+   <section id="projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>Current Projects</h2>
+      <p>Live projects we're delivering now.</p>
+    </div>
+
+    <div class="projects-wrapper">
+      <div class="project-card">
+        <h3>Asana Setup & Automation for a Marketing Agency</h3>
+      </div>
+
+      <div class="project-card">
+        <h3>ClickUp Workspace Build for an IT Services Team</h3>
+      </div>
+
+      <div class="project-card">
+        <h3>Financial Reporting System for a Startup Founder</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ====== TEAM ====== -->
+  <section id="team">
+    <div class="container">
+      <div class="section-title">
+        <h2 >Team</h2>
+        <p >People behind the work.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="member">
+          <div class="avatar"><img src="assets/team1.png" alt="Adrian"></div>
+          <h4 >Adrian J Julien</h4>
+          <p class="role" >Founder & </p>
+            <p class= "role">Growth Champion</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/adrian-julien-8336972a3?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/ajjulien00?utm_source=qr&igsh=OTBkOTl0cGFpNzcy" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:joshuahamsa@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="member">
+          <div class="avatar"><img src="assets/jashua.jpg" alt="Adrian"></div>
+          <h4 >Jashua Mohan</h4>
+          <p class="role" >Co-Founder &</p>
+          <p class="role" >Product Champion</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/jashuamohan007?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/jashua_mohan" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:jashuamuppena@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        
+
+        <div class="member">
+          <div class="avatar"><img src="assets/charita.jpg" alt="Adrian"></div>
+          <h4 >Charita Pillarisetti</h4>
+          <p class="role" >Product Champion</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/charita-pillarisetti-269097235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/charita__17_?igsh=MWtrbHN3eTVzNzNn" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a> 
+            <a href="mailto:joshuahamsa@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="member">
+          <div class="avatar"><img src="assets/team1.png" alt="Adrian"></div>
+          <h4 >SV Julien</h4>
+          <p class="role" >Financial Consultant</p>
+          <div class="team-socials">
+            <a href="https://www.linkedin.com/in/dorai-sv-undefined-523b45287?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/svadrian_julien?utm_source=qr&igsh=NnhhdGVxa3Q0eHM3" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:joshuahamsa@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+ <section id="blogs">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Latest Blogs</h2>
+      <p>Insights, updates, and expert content.</p>
+    </div>
+
+    <div class="blogs"></div>
+  </div>
+</section>  
+
+
+
+  <!-- ====== FAQ ====== -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2 >FAQ</h2>
+        <p >Common questions answered.</p>
+      </div>
+
+        <div class="faq-item">
+    <button type="button">What challenges does Zeik Labs solve?<span>+</span></button>
+    <div class="answer">
+      We help businesses eliminate inefficiencies through automation, structure, and streamlined systems.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button type="button">How do you decide which solutions fit a business?<span>+</span></button>
+    <div class="answer">
+      We perform an operational audit and create a customized roadmap based on needs and goals.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button type="button">Can you support teams unfamiliar with digital tools?<span>+</span></button>
+    <div class="answer">
+      Yes—training, onboarding, and guided adoption are included for smooth implementation.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button type="button">Do you offer support after setup?<span>+</span></button>
+    <div class="answer">
+      Yes, we provide ongoing system management, optimization, and team support.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button type="button">When can we expect results?<span>+</span></button>
+    <div class="answer">
+      Most clients notice increased efficiency and clarity within 30–90 days.
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FOOTER (addresses) ====== -->
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND + INPUT -->
+    <div class="footer-col">
+      <h3 class="footer-brand">Zeik Labs</h3>
+      <p class="footer-tag">Systems • Automation • Growth</p>
+    </div>
+
+    <!-- ADDRESS SECTION -->
+    <div class="footer-col">
+      <h4>Address</h4>
+      <p>Zeik Labs<br>123 Business Street<br>City, State, PIN</p>
+    </div>
+
+     <div class="footer-col">
+      <h4>Address</h4>
+      <p>Zeik Labs<br>123 Business Street<br>City, State, PIN</p>
+    </div>
+
+
+    <!-- CONTACT SECTION -->
+     <div class="footer-col">
+  <h4>Contact Us</h4>
+  <p class="phone">+91 8008719651</p>
+  <p class="phone">+91 9392045766</p>
+
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/in/dorai-sv-undefined-523b45287?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://www.instagram.com/svadrian_julien?utm_source=qr&igsh=NnhhdGVxa3Q0eHM3" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="mailto:joshuahamsa@gmail.com" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Zeik Labs — All rights reserved
+  </div>
+</footer>
+
+  <!-- Optional: path to your req.docx if you want to include link (local file path on my system) -->
+  <!-- the uploaded document is at: /mnt/data/REQ.docx (use it if you want) -->
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+  
+</body>
+</html>
