@@ -19,6 +19,44 @@
   --glass: rgba(255,255,255,0.6);
 }
 
+/* GLOBAL CARD FIX */
+.project-card,
+.blog-card,
+.service-card,
+.member,
+.faq-item {
+  width: 100% !important;
+  max-width: 420px;
+  min-height: auto;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Ensure container doesn't push cards out */
+.project-grid,
+.blog-grid,
+.services-row,
+.team-row,
+.faq-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Fix scaling glitch when switching screen sizes */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Fix animation glitches */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+
 /* Dark mode variables (applied by .dark on <html>) */
 
 /* ---------------------------
@@ -724,6 +762,18 @@ section{padding:80px 0;background:var(--bg);position:relative;transition:backgro
   font-size: 0.9rem;
 }
 
+s
+  .project-card,
+  .blog-card,
+  .service-card,
+  .member {
+    margin: auto;
+    width: 92vw !important;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 
   .about-images {
     display: none !important;
