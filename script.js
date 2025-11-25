@@ -169,7 +169,6 @@ document.querySelectorAll('.services-row, .project-card, .blog-card, .member')
 
 
 /* --- Medium Blog Fetch (Text-Only) --- */
-
 async function loadMediumPosts() {
   const container = document.querySelector('.blogs');
   if (!container) return;
@@ -190,31 +189,35 @@ async function loadMediumPosts() {
       const parser = new DOMParser();
       const xml = parser.parseFromString(text, "text/xml");
 
-      const items = [...xml.querySelectorAll("item")].slice(0, 4);
+      const items = [...xml.querySelectorAll("item")].slice(0, 4); // ← LIMIT 4 POSTS
 
-      container.innerHTML = items.map(item => {
+      // clear first
+      container.innerHTML = "";
+
+      items.forEach(item => {
         const title = item.querySelector("title")?.textContent || "Untitled Post";
         const link = item.querySelector("link")?.textContent;
         const category = item.querySelector("category")?.textContent || "Blog";
-        return `
-          <div class="blog-card">
-            <small>${category}</small>
-            <h4>${title}</h4>
-            <a href="${link}" target="_blank">Read Blog →</a>
-          </div>
+
+        const card = document.createElement("div");
+        card.className = "blog-card";
+        card.innerHTML = `
+          <small>${category}</small>
+          <h4>${title}</h4>
+          <a href="${link}" target="_blank">Read Blog →</a>
         `;
-      }).join("");
+        container.appendChild(card);
+      });
 
       feedLoaded = true;
       break;
+
     } catch (err) {
       console.log("Trying fallback feed...");
     }
   }
 
   if (!feedLoaded) {
-    container.innerHTML = `<p style="color:red;">⚠️ Unable to load blogs right now.</p>`;
+    container.innerHTML = `<p style="color:red;text-align:center;">⚠️ Unable to load blogs right now.</p>`;
   }
 }
-
-loadMediumPosts();
