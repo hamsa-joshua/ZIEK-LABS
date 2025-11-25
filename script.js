@@ -2,6 +2,7 @@
    logo-change, services mobile accordion
 */
 
+
 /* helpers */
 const qs = s => document.querySelector(s);
 const qsa = s => document.querySelectorAll(s);
@@ -164,6 +165,19 @@ window.addEventListener("load", () => {
     }, 600);
   }
 });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal");
+      observer.unobserve(entry.target); // improves performance
+    }
+  });
+}, { threshold: 0.25 });
+
+document.querySelectorAll('.services-row, .project-card, .blog-card, .member')
+.forEach(el => observer.observe(el));
+
 
 
 /* --- Medium Blog Fetch (Text-Only) --- */
