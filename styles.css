@@ -40,7 +40,7 @@ a{color:inherit}
   transition:background .3s, transform .3s;
 }
 .logo{display:flex;align-items:center;gap:12px}
-.logo img{height:40px;width:auto;border-radius:8px;cursor:pointer;}
+.logo img{height:40px;width:auto;border-radius:8px;cursor:pointer}
 .brand{font-weight:700;font-size:1.5rem}
 nav.main-nav{display:flex;gap:22px;align-items:center}
 nav.main-nav a{font-weight:600;padding:10px 8px;font-size:1.15rem;border-radius:8px;transition:color .2s, transform .15s}
@@ -419,25 +419,22 @@ section{padding:80px 0;background:var(--bg);position:relative;transition:backgro
 .team-socials{margin-top:12px;display:flex;justify-content:center;gap:12px}
 .team-socials a{font-size:16px;color:var(--accent);background:#fff;width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.06);transition:all .2s}
 .team-socials a:hover{background:var(--accent);color:#fff;transform:translateY(-4px)}
+
 .blogs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centers items */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 20px;
-  width: 100%;
 }
 
 .blog-card {
   background: var(--glass);
   padding: 20px;
   border-radius: 12px;
-  border: 3px solid #e1284d80;
+  border: 3px solid #e1284d80 ;
   box-shadow: 0 4px 18px rgba(0,0,0,0.05);
   transition: transform .25s ease;
   min-height: 170px;
-  width: 280px; 
-  max-width: 300px;
 }
 
 .blog-card:hover {
@@ -799,11 +796,16 @@ section{padding:80px 0;background:var(--bg);position:relative;transition:backgro
   .blogs {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
+    width: 100%;
+    overflow-x: visible;
   }
 
   .blog-card {
-    width: 90%;
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    box-sizing: border-box;
   }
 }
 

@@ -2,7 +2,6 @@
    logo-change, services mobile accordion
 */
 
-
 /* helpers */
 const qs = s => document.querySelector(s);
 const qsa = s => document.querySelectorAll(s);
@@ -71,6 +70,18 @@ qsa('.faq-item button').forEach(btn=>{
 /* --- auto year --- */
 if(yearEl) yearEl.textContent = new Date().getFullYear();
 
+/* --- logo replace (client-side) --- */
+logoImg.addEventListener('click', ()=>{
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.onchange = e => {
+    const f = e.target.files[0];
+    if(!f) return;
+    logoImg.src = URL.createObjectURL(f);
+  };
+  input.click();
+});
 
 /* --- Autosave editable content to localStorage --- */
 const editableSelector = '[contenteditable="true"]';
@@ -154,21 +165,9 @@ window.addEventListener("load", () => {
   }
 });
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("reveal");
-      observer.unobserve(entry.target); // improves performance
-    }
-  });
-}, { threshold: 0.25 });
-
-document.querySelectorAll('.services-row, .project-card, .blog-card, .member')
-.forEach(el => observer.observe(el));
-
-
 
 /* --- Medium Blog Fetch (Text-Only) --- */
+
 async function loadMediumPosts() {
   const container = document.querySelector('.blogs');
   if (!container) return;
@@ -189,35 +188,31 @@ async function loadMediumPosts() {
       const parser = new DOMParser();
       const xml = parser.parseFromString(text, "text/xml");
 
-      const items = [...xml.querySelectorAll("item")].slice(0, 4); // ← LIMIT 4 POSTS
+      const items = [...xml.querySelectorAll("item")].slice(0, 4);
 
-      // clear first
-      container.innerHTML = "";
-
-      items.forEach(item => {
+      container.innerHTML = items.map(item => {
         const title = item.querySelector("title")?.textContent || "Untitled Post";
         const link = item.querySelector("link")?.textContent;
         const category = item.querySelector("category")?.textContent || "Blog";
-
-        const card = document.createElement("div");
-        card.className = "blog-card";
-        card.innerHTML = `
-          <small>${category}</small>
-          <h4>${title}</h4>
-          <a href="${link}" target="_blank">Read Blog →</a>
+        return `
+          <div class="blog-card">
+            <small>${category}</small>
+            <h4>${title}</h4>
+            <a href="${link}" target="_blank">Read Blog →</a>
+          </div>
         `;
-        container.appendChild(card);
-      });
+      }).join("");
 
       feedLoaded = true;
       break;
-
     } catch (err) {
       console.log("Trying fallback feed...");
     }
   }
 
   if (!feedLoaded) {
-    container.innerHTML = `<p style="color:red;text-align:center;">⚠️ Unable to load blogs right now.</p>`;
+    container.innerHTML = `<p style="color:red;">⚠️ Unable to load blogs right now.</p>`;
   }
 }
+
+loadMediumPosts();
