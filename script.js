@@ -70,18 +70,6 @@ qsa('.faq-item button').forEach(btn=>{
 /* --- auto year --- */
 if(yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* --- logo replace (client-side) --- */
-logoImg.addEventListener('click', ()=>{
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'image/*';
-  input.onchange = e => {
-    const f = e.target.files[0];
-    if(!f) return;
-    logoImg.src = URL.createObjectURL(f);
-  };
-  input.click();
-});
 
 /* --- Autosave editable content to localStorage --- */
 const editableSelector = '[contenteditable="true"]';
